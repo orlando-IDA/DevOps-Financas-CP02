@@ -13,13 +13,13 @@ Esta API e uma versao Java Spring Boot baseada no projeto ApiTransacoes (C#).
 
 ## Endpoints
 
-### Lancamentos
+### Transacoes
 
-- GET /api/lancamentos: Lista todos os lancamentos
-- GET /api/lancamentos/{id}: Busca um lancamento pelo ID
-- POST /api/lancamentos: Cria um novo lancamento
-- PUT /api/lancamentos/{id}: Atualiza um lancamento existente
-- DELETE /api/lancamentos/{id}: Remove um lancamento
+- GET /api/transacoes: Lista todas as transacoes (lancamentos)
+- GET /api/transacoes/{id}: Busca uma transacao pelo ID
+- POST /api/transacoes: Cria uma nova transacao
+- PUT /api/transacoes/{id}: Atualiza uma transacao existente
+- DELETE /api/transacoes/{id}: Remove uma transacao
 
 ## Como Executar
 

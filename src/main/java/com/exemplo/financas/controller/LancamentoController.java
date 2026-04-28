@@ -10,39 +10,39 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/lancamentos")
+@RequestMapping("/api/transacoes")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class LancamentoController {
     
     private final LancamentoService lancamentoService;
     
-    // GET: api/lancamentos
+    // GET: api/transacoes
     @GetMapping
     public List<Lancamento> getAll() {
         return lancamentoService.listarTodos();
     }
     
-    // GET: api/lancamentos/{id}
+    // GET: api/transacoes/{id}
     @GetMapping("/{id}")
     public ResponseEntity<Lancamento> getById(@PathVariable Integer id) {
         return ResponseEntity.ok(lancamentoService.buscarPorId(id));
     }
     
-    // POST: api/lancamentos
+    // POST: api/transacoes
     @PostMapping
     public ResponseEntity<Lancamento> create(@RequestBody Lancamento lancamento) {
         Lancamento novoLancamento = lancamentoService.criar(lancamento);
         return ResponseEntity.status(HttpStatus.CREATED).body(novoLancamento);
     }
     
-    // PUT: api/lancamentos/{id}
+    // PUT: api/transacoes/{id}
     @PutMapping("/{id}")
     public ResponseEntity<Lancamento> update(@PathVariable Integer id, @RequestBody Lancamento lancamento) {
         return ResponseEntity.ok(lancamentoService.atualizar(id, lancamento));
     }
     
-    // DELETE: api/lancamentos/{id}
+    // DELETE: api/transacoes/{id}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         lancamentoService.deletar(id);
